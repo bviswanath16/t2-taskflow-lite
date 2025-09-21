@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaskFlow Lite</title>
+  <link rel="stylesheet" href="../styles/utilities.css">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <main class="app-container">
+    <header class="app-header">
+      <h1>TaskFlow Lite</h1>
+      <p class="tagline">Your client-side task management solution</p>
+    </header>
+
+    <section class="task-input-section card">
+      <form id="task-form" novalidate>
+        <div class="form-row">
+          <input id="task-input" name="task" type="text" placeholder="Add a new task..." maxlength="200" aria-label="Task input">
+          <button id="add-btn" type="submit">Add</button>
+        </div>
+        <div id="validation-msg" class="validation-msg" aria-live="polite"></div>
+      </form>
+
+      <div class="controls">
+        <div class="filters">
+          <button data-filter="all" class="filter-btn active">All</button>
+          <button data-filter="active" class="filter-btn">Active</button>
+          <button data-filter="completed" class="filter-btn">Completed</button>
+        </div>
+        <div class="stats">
+          <span id="task-count">0</span> tasks
+        </div>
+      </div>
+    </section>
+
+    <section class="task-list-section card">
+      <ul id="task-list" class="task-list" tabindex="0" aria-label="Task list"></ul>
+      <div class="list-actions">
+        <button id="clear-completed">Clear Completed</button>
+        <button id="export-json">Export JSON</button>
+        <button id="import-json">Import JSON</button>
+        <input id="import-file" type="file" accept="application/json" style="display:none">
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <small>Built with vanilla JavaScript • LocalStorage persistence</small>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
